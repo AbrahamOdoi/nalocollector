@@ -90,6 +90,7 @@
 			if (data == '1') {
 				window.location='main.php';
 			} else {
+				$("#error").html(data);
 				$("#error").fadeIn();
 				$("#error").fadeOut(9000);
 				
