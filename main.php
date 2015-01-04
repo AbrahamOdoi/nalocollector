@@ -80,7 +80,7 @@
 			<div data-role="content">
 				<div>
 					<div id="display" class="display">
-						display
+						
 					</div>
 					<!-- <form action="" method="post"> -->
 					<label for="username" style="text-align: center">Client Name</label>
@@ -127,7 +127,6 @@
 			<div data-role="content">
 				<div>
 					<div id="paydisplay" class="display">
-						display
 					</div>
 					<!-- <form action="" method="post"> -->
 					<label for="paymentClient" style="text-align: center">Client ID</label>
@@ -179,7 +178,7 @@
 			<div data-role="content">
 				<div>
 					<div id="searchdisplay" class="display">
-						display
+						
 					</div>
 					<!-- <form action="" method="post"> -->
 					<label for="paymentClient" style="text-align: center">Client ID</label>

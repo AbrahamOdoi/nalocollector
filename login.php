@@ -29,9 +29,7 @@
 			<!-- Content    -->
 			<div data-role="content">
 				<div>
-					<div id="display" class="display">
-						display
-					</div>
+					<div id="display" class="display"></div>
 					<!-- <form action="" method="post"> -->
 					<label for="username" style="text-align: center">Username</label>
 					<input type="text" name="username" value="" id="txtusername" data-mini='true'/>
