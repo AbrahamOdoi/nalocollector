@@ -29,13 +29,17 @@
 			<!-- Content    -->
 			<div data-role="content">
 				<div>
+					<div id="display" class="display">
+						display
+					</div>
 					<!-- <form action="" method="post"> -->
-						<label for="username" style="text-align: center">Username</label>
-						<input type="text" name="username" value="" id="txtusername" data-mini='true'/>
-						<label for="password" style="text-align: center">Password</label>
-						<input type="password" name="password" value="" id="txtpassword" data-mini='true'/>
-						<input type="submit" name="btnlogin"  data-mini='true' onclick="Login()" style="border-left: 1px solid skyblue; background: #3388cc; text-shadow: none;" value="Login"/>
-						<div style="text-align: center; color: red; display: none;" id="error">Invalid Credentials</div>
+					<label for="username" style="text-align: center">Username</label>
+					<input type="text" name="username" value="" id="txtusername" data-mini='true'/>
+					<label for="password" style="text-align: center">Password</label>
+					<input type="password" name="password" value="" id="txtpassword" data-mini='true'/>
+					<button type="submit" name="btnlogin"  data-mini='true' onclick="Login()" style="border-left: 1px solid skyblue; background: #3388cc; text-shadow: none;">
+						LOGIN
+					</button>
 					<!-- </form> -->
 				</div>
 			</div>
@@ -80,22 +84,32 @@
 
 	//Login Attempt
 	function Login() {
+		$("#display").html('Processing...');
+		$("#display").show();
 		var id = $('#txtusername').val();
 		var pass = $('#txtpassword').val();
 
-		$.post("loginval.php", {
-			username : id,
-			pass : pass
-		}, function(data) {
-			if (data == '1') {
-				window.location='main.php';
-			} else {
-				$("#error").html(data);
-				$("#error").fadeIn();
-				$("#error").fadeOut(9000);
-				
-			};
-		});
-		return false;
+		if (id == '' || pass == '') {
+			$("#display").html('All fields required');
+			$("#display").css('color', 'red');
+			$("#display").fadeOut(8000);
+		} else {
+
+			$.post("loginval.php", {
+				username : id,
+				pass : pass
+			}, function(data) {
+				if (data == '1') {
+					$("#display").hide();
+					window.location = 'main.php';
+				} else {
+					$("#display").html('Invalid redentials');
+					$("#display").css('color', 'red');
+					$("#display").fadeIn();
+					$("#display").fadeOut(8000);
+
+				};
+			});
+		}
 	}
 </script>

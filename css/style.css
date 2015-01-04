@@ -236,6 +236,26 @@ i{
 }
 .splash{
 	text-shadow:none;
-	color:white;
+	color:#6666CC;
 	display:none;
+}
+
+a{
+	text-decoration: none;
+}
+.display{
+	padding: 10px;
+	background:skyblue;
+	color:white;
+	text-align: center;
+	text-shadow: none;
+	font-weight:bolder;
+	width:83%;
+	position: absolute;
+	top: 45%;
+	left:0px;
+	margin: 5%;
+	z-index: 80px;
+	display:none;
+	border:1px solid gray;
 }
